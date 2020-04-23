@@ -22,17 +22,10 @@ RUN ln -rsf zlib/zlib.h tools/arm-bcm2708/arm-linux-gnueabihf/arm-linux-gnueabih
 RUN ln -rsf zlib/build_arm/zconf.h tools/arm-bcm2708/arm-linux-gnueabihf/include
 RUN ln -rsf zlib/zlib.h tools/arm-bcm2708/arm-linux-gnueabihf/include
 
-# RUN sed -i "s/..\/..\//\//" WiringPi/wiringPi/Makefile
-# RUN cat WiringPi/wiringPi/Makefile
-
-# ENV RPI_TOOL_BIN=/tools/arm-bcm2708/arm-linux-gnueabihf/bin
-# ENV RPI_CC=${RPI_TOOL_BIN}/arm-linux-gnueabihf-gcc
-# ENV RPI_AR=${RPI_TOOL_BIN}/arm-linux-gnueabihf-ar
-# ENV RPI_STRIP=${RPI_TOOL_BIN}/arm-linux-gnueabihf-strip
-# ENV RPI_RANLIB=${RPI_TOOL_BIN}/arm-linux-gnueabihf-ranlib
-
 RUN cd deps-zlib-libpng && git submodule init && git submodule update --init --recursive && git submodule update --remote
 
 RUN mkdir -p build_libpng && cd build_libpng && cmake ../deps-zlib-libpng -DCMAKE_TOOLCHAIN_FILE=../toolchain-rpi.cmake && make
 
 LABEL maintainer="mh@0x25.net"
+
+RUN apt-get -y install g++
