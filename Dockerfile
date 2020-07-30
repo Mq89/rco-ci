@@ -30,3 +30,7 @@ RUN cd deps-zlib-libpng && git submodule init && git submodule update --init --r
 
 # build libpng
 RUN mkdir -p build_libpng && cd build_libpng && cmake ../deps-zlib-libpng -DCMAKE_TOOLCHAIN_FILE=../toolchain-rpi.cmake && make
+
+# build openssl
+RUN git clone https://github.com/openssl/openssl.git
+RUN cd openssl && ./Configure linux-generic32 --cross-compile-prefix=../tools/arm-bcm2708/arm-linux-gnueabihf/bin/arm-linux-gnueabihf- && make
