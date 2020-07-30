@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2020-07-30
+
 ### Added
 
 - Add precompiled OpenSSL for ARM in Dockerfile
@@ -23,5 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   + libpng
 - RPi Toolchain
 
-[Unreleased]: https://github.com/Mq89/rco-ci/compare/v1.0.0...master
+[Unreleased]: https://github.com/Mq89/rco-ci/compare/v1.1.0...master
+[1.1.0]: https://github.com/Mq89/rco-ci/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Mq89/rco-ci/releases/tag/v1.0.0
